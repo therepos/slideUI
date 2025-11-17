@@ -1,20 +1,19 @@
-# ExcelUI Add-in
+# slideUI Add-in
 ---
 ## How to Use
-1. Download the latest [release](https://github.com/therepos/excelUI/releases/excelUI/latest/download/excelUI.zip). 
-2. Install with excelUIsetup.cmd
+1. Download the latest [release](https://github.com/therepos/slideUI/releases/slideUI/latest/download/slideUI.zip). 
+2. Install with slideUIsetup.cmd
 
 ## Structure
 ```
-excelUI
+slideUI
 ├── .github
 │   └── workflows
-│       ├── release-exceladdin.yml
-│       └── release-excelUI.yml
+│       └── release-slideUI.yml
 ├── apps
 │   ├── bas
 │   ├── cmd
-│   └── xlam
+│   └── pptm
 ├── src
 ├── temp
 ├── .gitignore
