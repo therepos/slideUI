@@ -313,3 +313,49 @@ Sub TableNormalMargin()
     Next sld
 End Sub
 ```
+
+### `SelectedTableFormatReset`
+
+```vbnet
+Sub SelectedTableFormatReset()
+    Dim shp As Shape
+    Dim tbl As Table
+    Dim r As Long, c As Long
+    
+    ' Check if selection is a table
+    If ActiveWindow.Selection.Type = ppSelectionShapes Then
+        Set shp = ActiveWindow.Selection.ShapeRange(1)
+        
+        If shp.HasTable Then
+            Set tbl = shp.Table
+            
+            ' Loop through all cells
+            For r = 1 To tbl.Rows.Count
+                For c = 1 To tbl.Columns.Count
+                    With tbl.Cell(r, c).Shape.TextFrame.TextRange
+                        .Font.Name = "Arial"
+                        .Font.Size = 18
+                        .Font.Bold = msoFalse
+                        .Font.Italic = msoFalse
+                        .Font.Underline = msoFalse
+                        .ParagraphFormat.Alignment = ppAlignLeft
+                    End With
+                    
+                    ' Remove cell fill and borders
+                    tbl.Cell(r, c).Shape.Fill.Visible = msoFalse
+                    tbl.Cell(r, c).Borders(ppBorderTop).Visible = msoFalse
+                    tbl.Cell(r, c).Borders(ppBorderBottom).Visible = msoFalse
+                    tbl.Cell(r, c).Borders(ppBorderLeft).Visible = msoFalse
+                    tbl.Cell(r, c).Borders(ppBorderRight).Visible = msoFalse
+                Next c
+            Next r
+            
+            MsgBox "Table formatting has been reset.", vbInformation
+        Else
+            MsgBox "Selected shape is not a table.", vbExclamation
+        End If
+    Else
+        MsgBox "Please select a table first.", vbExclamation
+    End If
+End Sub
+```
