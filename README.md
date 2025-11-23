@@ -1,20 +1,20 @@
-# slideUI Add-in
+# deckUI Add-in
 ---
 ## How to Use
-1. Download the latest [release](https://github.com/therepos/slideUI/releases/slideUI/latest/download/slideUI.zip). 
-2. Install with slideUIsetup.cmd
+1. Download the latest [release](https://github.com/therepos/deckUI/releases/deckUI/latest/download/deckUI.zip). 
+2. Install with deckUIsetup.cmd
 
 ## Structure
 ```
-slideUI
+deckUI
 ├── .github
 │   └── workflows
-│       └── release-slideUI.yml
-├── apps
-│   ├── bas
-│   ├── cmd
-│   └── pptm
+├── bin
+├── docs
 ├── src
+│   └── bas
+│   └── cmd
+│   └── pptm
 ├── temp
 ├── .gitignore
 ├── LICENSE
